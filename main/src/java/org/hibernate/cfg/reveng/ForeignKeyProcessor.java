@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.hibernate.JDBCException;
 import org.hibernate.MappingException;
@@ -30,10 +31,10 @@ public class ForeignKeyProcessor {
 			Table referencedTable, 
 			ProgressListener progress) throws JDBCBinderException {
 		// foreign key name to list of columns
-		Map<String, List<Column>> dependentColumns = new HashMap<String, List<Column>>();
+		Map<String, List<Column>> dependentColumns = new TreeMap<String, List<Column>>();
 		// foreign key name to Table
-		Map<String, Table> dependentTables = new HashMap<String, Table>();
-		Map<String, List<Column>> referencedColumns = new HashMap<String, List<Column>>();
+		Map<String, Table> dependentTables = new TreeMap<String, Table>();
+		Map<String, List<Column>> referencedColumns = new TreeMap<String, List<Column>>();
 		
 		short bogusFkName = 0;
 		
